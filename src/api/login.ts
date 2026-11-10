@@ -15,7 +15,7 @@ export function logout(){
     return axios.post("/UserSignIn/Logout")
 }
 
-export function updatepwd(oldpassword:string,newpassword:string){
+export function updatepassword(oldpassword:string,newpassword:string){
     return axios.post("/UserSignIn/UpdatePassword",{
         OldPassword:oldpassword,
         NewPassword:newpassword

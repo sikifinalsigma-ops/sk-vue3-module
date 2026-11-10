@@ -50,7 +50,6 @@ import type { ElForm } from 'element-plus'
 import { useLoginUser } from '@/frame/store/loginuser'
 import { sha256 } from 'js-sha256';
 
-const hash = sha256('123456');
 const router = useRouter()
 const loginUserStore = useLoginUser()
 

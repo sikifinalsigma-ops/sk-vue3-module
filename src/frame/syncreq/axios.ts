@@ -1,9 +1,9 @@
 import axios from "axios"
 import { toast } from '@/frame/module/info'
-import { getAuthorizationToken } from '@/frame/module/auth'
-
+import { getAuthorizationToken } from '@/frame/module/authorization'
+import { AxiosUrl } from '@/const/frame'
 const service = axios.create({
-    baseURL:"http://localhost:58061/api"
+    baseURL:AxiosUrl
 })
 
 // 添加请求拦截器

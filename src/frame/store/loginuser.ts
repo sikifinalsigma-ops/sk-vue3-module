@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getAuthorizationToken, setAuthorizationToken, removeAuthorizationToken } from '@/frame/module/auth'
+import { getAuthorizationToken, setAuthorizationToken, removeAuthorizationToken } from '@/frame/module/authorization'
 import { login, loginfo, logout } from '@/api/login'
 
 export const useLoginUser = defineStore('loginuser', {

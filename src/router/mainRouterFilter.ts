@@ -1,5 +1,5 @@
 import router from "@/router/mainRouter"
-import { getAuthorizationToken } from "@/frame/module/auth"
+import { getAuthorizationToken } from "@/frame/module/authorization"
 import { toast } from "@/frame/module/info"
 import { showFullLoading, hideFullLoading } from "@/frame/module/progress"
 import useLoginUser from "@/frame/store/loginuser"

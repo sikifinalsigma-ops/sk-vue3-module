@@ -24,9 +24,9 @@
             </el-tooltip>
 
             <el-dropdown class="dropdown" @command="handleCommand">
-                <span class="flex items-center text-light-50">
-                    <el-avatar class="mr-2" :size="25" :src="$store.state.user.avatar" />
-                    {{ $store.state.user.username }}
+                <span class="flex items-center text-white">
+                    <el-avatar class="mr-2" :size="25" :src="userStore.user.account" />
+                    {{ userStore.user.userName }}
                     <el-icon class="el-icon--right">
                         <arrow-down />
                     </el-icon>
@@ -57,15 +57,17 @@
 
 </template>
 <script setup lang="ts">
-import FormDrawer from '~/components/FormDrawer.vue'
+import FormDrawer from '@/pages/frame/component/FormDrawer.vue'
 import { useFullscreen } from '@vueuse/core'
-import { useRepassword,useLogout } from "~/composables/useManager"
+import { useRepassword,userLogout } from "@/frame/module/usermanager"
+import {useLoginUser} from "@/frame/store/loginuser"
 const {
     // 是否全屏状态
     isFullscreen,
     // 切换全屏
     toggle
 } = useFullscreen()
+const userStore = useLoginUser()
 
 const {
     formDrawerRef,
@@ -78,9 +80,9 @@ const {
 
 const {
     handleLogout
-} = useLogout()
+} = userLogout()
 
-const handleCommand = (c) => {
+const handleCommand = (c:any) => {
     switch (c) {
         case "logout":
             handleLogout()
@@ -96,8 +98,9 @@ const handleRefresh = () => location.reload()
 
 </script>
 <style scoped>
+@reference "tailwindcss";
 .f-header {
-    @apply flex items-center bg-indigo-700 text-light-50 fixed top-0 left-0 right-0;
+    @apply flex items-center bg-indigo-700 text-white fixed top-0 left-0 right-0;
     height: 64px;
 }
 
